@@ -6,9 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
-mypath.py
 .idea/
 run/
+.DS_Store
+
 # Distribution / packaging
 .Python
 build/
