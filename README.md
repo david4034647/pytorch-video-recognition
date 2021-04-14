@@ -17,7 +17,7 @@ The code was tested with Anaconda and Python 3.5. After installing the Anaconda 
 
 0. Clone the repo:
     ```Shell
-    git clone https://github.com/jfzhang95/pytorch-video-recognition.git
+    git clone https://github.com/david4034647/pytorch-video-recognition.git
     cd pytorch-video-recognition
     ```
 
