@@ -57,8 +57,8 @@ class VideoDataset(Dataset):
         self.label_array = np.array([self.label2index[label] for label in labels], dtype=int)
 
         if dataset == "ucf101":
-            if not os.path.exists('dataloaders/ucf_labels.txt'):
-                with open('dataloaders/ucf_labels.txt', 'w') as f:
+            if not os.path.exists('/Users/daiwei/Documents/AI/pytorch-video-recognition/dataloaders/ucf_labels.txt'):
+                with open('/Users/daiwei/Documents/AI/pytorch-video-recognition/dataloaders/ucf_labels.txt', 'w') as f:
                     for id, label in enumerate(sorted(self.label2index)):
                         f.writelines(str(id+1) + ' ' + label + '\n')
 
@@ -122,6 +122,9 @@ class VideoDataset(Dataset):
 
         # Split train/val/test sets
         for file in os.listdir(self.root_dir):
+            if  file.find('.DS_Store') > -1:
+                return
+
             file_path = os.path.join(self.root_dir, file)
             video_files = [name for name in os.listdir(file_path)]
 
@@ -200,7 +203,6 @@ class VideoDataset(Dataset):
 
         return buffer
 
-
     def normalize(self, buffer):
         for i, frame in enumerate(buffer):
             frame -= np.array([[[90.0, 98.0, 102.0]]])
@@ -244,6 +246,8 @@ class VideoDataset(Dataset):
 
 if __name__ == "__main__":
     from torch.utils.data import DataLoader
+
+    # 'preprocess=True' 先要进行一次预处理，可以把训练数据分成test、val、train三个目录，这样再进行训练才可以进行
     train_data = VideoDataset(dataset='ucf101', split='test', clip_len=8, preprocess=False)
     train_loader = DataLoader(train_data, batch_size=100, shuffle=True, num_workers=4)
 
