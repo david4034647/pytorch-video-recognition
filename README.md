@@ -98,10 +98,10 @@ accuracy and loss curves for each experiment are shown below:
 
 - **UCF101**
 
-<p align="center"><img src="assets/ucf101_results.png" align="center" width=900 height=auto/></p>
+![ucf101](./assets/ucf101_results.png)
 
 - **HMDB51**
 
-<p align="center"><img src="assets/hmdb51_results.png" align="center" width=900 height=auto/></p>
+![ucf101](./assets/hmdb51_results.png)
 
 Experiments for other models will be updated soon ...
