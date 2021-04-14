@@ -1,11 +1,8 @@
 # pytorch-video-recognition
 
-<table style="border:0px">
-   <tr>
-       <td><img src="assets/demo1.gif" frame=void rules=none></td>
-       <td><img src="assets/demo2.gif" frame=void rules=none></td>
-   </tr>
-</table>
+![image](./assets/demo1.gif)
+
+![image](./assets/demo2.gif)
 
 ## Introduction
 This repo contains several models for video action recognition,
